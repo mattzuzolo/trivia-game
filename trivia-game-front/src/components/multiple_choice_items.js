@@ -11,7 +11,7 @@ class MultipleChoiceItems extends Component {
   render(){
     return(
       <div>
-        {this.props.incorrectAnswers.map(i => <button key={UUID()}>{i}</button>)}
+        {this.props.incorrectAnswers.map(i => <button onClick={this.props.onAnswerSelection} key={UUID()}>{i}</button>)}
         <button>{this.props.correctAnswer}</button>
       </div>
     );

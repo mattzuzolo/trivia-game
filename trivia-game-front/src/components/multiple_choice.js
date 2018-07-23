@@ -13,7 +13,10 @@ class MultipleChoice extends Component {
     return(
       <div>
         Select the correct answer:
-        <MultipleChoiceItems correctAnswer={this.props.correctAnswer} incorrectAnswers={this.props.incorrectAnswers}/>
+        <MultipleChoiceItems
+          correctAnswer={this.props.correctAnswer}
+          incorrectAnswers={this.props.incorrectAnswers}
+          onAnswerSelection={this.props.onAnswerSelection}/>
       </div>
     )
   }

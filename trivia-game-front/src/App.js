@@ -16,6 +16,19 @@ class App extends Component {
       }
   }
 
+  onAnswerSelection = (event) => {
+    console.log("button clicked")
+    debugger;
+    if (this.state.correctAnswer === event.target.innerText){
+      debugger;
+      alert("Correct!")
+    }
+    else {
+      alert("Incorrect!")
+    }
+
+  }
+
 
   render() {
     console.log("quizdata", this.state.quizData)
@@ -23,7 +36,11 @@ class App extends Component {
       <div className="App">
         Matt's Quiz Game:
         <Question quizData={this.state.quizData}/>
-        <MultipleChoice correctAnswer={this.state.correctAnswer} incorrectAnswers={this.state.incorrectAnswers}/>
+        <MultipleChoice
+          correctAnswer={this.state.correctAnswer}
+          incorrectAnswers={this.state.incorrectAnswers}
+          onAnswerSelection={this.onAnswerSelection}
+          />
       </div>
     );
   }

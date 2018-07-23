@@ -12,6 +12,7 @@ class MultipleChoice extends Component {
   render(){
     return(
       <div>
+        Select the correct answer:
         <MultipleChoiceItems correctAnswer={this.props.correctAnswer} incorrectAnswers={this.props.incorrectAnswers}/>
       </div>
     )

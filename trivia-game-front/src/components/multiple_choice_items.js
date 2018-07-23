@@ -10,10 +10,10 @@ class MultipleChoiceItems extends Component {
 
   render(){
     return(
-      <ul>
-        {this.props.incorrectAnswers.map(i => <li key={UUID()}>{i}</li>)}
-        <li>{this.props.correctAnswer}</li>
-      </ul>
+      <div>
+        {this.props.incorrectAnswers.map(i => <button key={UUID()}>{i}</button>)}
+        <button>{this.props.correctAnswer}</button>
+      </div>
     );
   }
 

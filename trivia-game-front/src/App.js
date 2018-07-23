@@ -9,18 +9,19 @@ class App extends Component {
     super(props)
 
     this.state = {
-      quizData: ["placeholder"],
-      correctAnswer: "placeholder",
-      incorrectAnswers: ["placeholder1",
-    "placeholder2", "placeholder3"]
+      quizData: ["quizData placeholder"],
+      correctAnswer: "correct placeholder",
+      incorrectAnswers: ["incorrect placeholder1",
+    "incorrect placeholder2", "incorrect placeholder3"]
       }
   }
 
 
   render() {
+    console.log("quizdata", this.state.quizData)
     return (
       <div className="App">
-        App content here
+        Matt's Quiz Game:
         <Question quizData={this.state.quizData}/>
         <MultipleChoice correctAnswer={this.state.correctAnswer} incorrectAnswers={this.state.incorrectAnswers}/>
       </div>

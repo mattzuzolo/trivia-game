@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import UUID from 'uuid';
 
 class MultipleChoiceItems extends Component {
   constructor(props){
@@ -9,15 +10,12 @@ class MultipleChoiceItems extends Component {
 
   render(){
     return(
-      <div>
-        <li>Answer 1</li>
-        <li>Answer 2</li>
-        <li>Answer 3</li>
-        <li>Answer 4</li>
-      </div>
+      <ul>
+        {this.props.incorrectAnswers.map(i => <li key={UUID()}>{i}</li>)}
+        <li>{this.props.correctAnswer}</li>
+      </ul>
     );
   }
-
 
 }
 

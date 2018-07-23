@@ -8,17 +8,13 @@ class App extends Component {
   constructor(props){
     super(props)
 
-    this.state = { quizData: "placeholder" }
+    this.state = {
+      quizData: ["placeholder"],
+      correctAnswer: "placeholder",
+      incorrectAnswers: ["placeholder1",
+    "placeholder2", "placeholder3"]
+      }
   }
-
-  componentDidMount(){
-    let url = "https://opentdb.com/api.php?amount=10&category=10&difficulty=medium&type=multiple"
-
-    fetch(url)
-      .then(response => response.json())
-      .then(apiData => this.setState({quizData: apiData}))
-  }
-
 
 
   render() {
@@ -26,9 +22,21 @@ class App extends Component {
       <div className="App">
         App content here
         <Question quizData={this.state.quizData}/>
-        <MultipleChoice />
+        <MultipleChoice correctAnswer={this.state.correctAnswer} incorrectAnswers={this.state.incorrectAnswers}/>
       </div>
     );
+  }
+
+  componentDidMount(){
+    let url = "https://opentdb.com/api.php?amount=10&category=10&difficulty=medium&type=multiple"
+
+    fetch(url)
+      .then(response => response.json())
+      .then(apiData => this.setState({
+        quizData: apiData.results[0],
+        correctAnswer: apiData.results[0].correct_answer,
+        incorrectAnswers: apiData.results[0].incorrect_answers
+      }))
   }
 }
 

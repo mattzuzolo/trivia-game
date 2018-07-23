@@ -7,12 +7,14 @@ class Question extends Component {
     this.state = { key: "value" }
   }
 
-  render(){
-    console.log("quizData",this.props.quizData)
 
+
+
+  render(){
     return(
       <div>
-        <p>{this.props.quizData.results}</p>
+        Question:
+        {this.props.quizData.question}
       </div>
     );
   }

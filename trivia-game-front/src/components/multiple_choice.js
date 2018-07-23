@@ -10,12 +10,9 @@ class MultipleChoice extends Component {
   }
 
   render(){
-    
     return(
       <div>
-        <ul>
-        <MultipleChoiceItems />
-        </ul>
+        <MultipleChoiceItems correctAnswer={this.props.correctAnswer} incorrectAnswers={this.props.incorrectAnswers}/>
       </div>
     )
   }
